@@ -15,3 +15,13 @@ Get-localuser -name $env:USERNAME | select-object sid
 Get-localuser -name $env:'Student' | select-object sid
 Get-ChildItem -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\ProfileList
 #Ways to locate profiles (suspicious as well) within the registry, to incude their SIDS. 
+
+C:\ProgramData\Microsoft\Windows\WlanReport\wlan-report-latest.html
+$LET THE INSTRUCTORS KNOW THAT YOU ADDED THIS ON ACCIDENT
+
+get-childitem -force 
+#will list all files in the current directory, regardless of attributes.
+
+get-filehash -algorithm SHA512
+#Gives the sha512 hash of a file in windows powershell. 
+
