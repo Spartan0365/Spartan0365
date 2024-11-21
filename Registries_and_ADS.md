@@ -60,6 +60,18 @@ dir /a /s /R | findstr "DATA"
 #You can locate hidden ADS's using this. /a is all, /s is subdirectories, and the /R is specfically for files with an ADS. Findstr is the same as grep, and matches a string that has 'DATA' in it, which is commonly next to the ADS. 
 
 
+openssl enc -d aes-128-key -a -salt -in /home/garviel/Encrypted
+
+
+
+
+
+
+
+
+Get-Process | where-object {$_.SI -eq '0'}
+#Will display session process that starts at the system 0 level.
+
 
 
 
