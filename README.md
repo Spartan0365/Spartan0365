@@ -35,7 +35,20 @@ icacls "C:\Windows\System32\drivers\etc\hosts"
 #lists the permissions of the specified file, (path provided to the file hosts). RX is read and execute, which is permitted by the group: Builtin\Users.
 
 certutil -hashfile "C:\Windows\System32\drivers\etc\hosts" MD5
-$provides the md5 hash of the provided file, which is an MD5 hash in this case, for the file 'hosts'.
+#provides the md5 hash of the provided file, which is an MD5 hash in this case, for the file 'hosts'.
+
+dir /s /b "readme"
+#syntax to search for a specific file (or string) within the present and sub directories of the current directory. 
+
+dir /a 
+#shows all--to include hidden--files within the current working directory. 
+
+dir z*
+#if a file path is too long to copy and paste, try using the dir command with a wildcard to capture the remainder of the filepath that cannot be pasted. 
+
+
+
+
 
 
 
