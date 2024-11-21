@@ -17,6 +17,9 @@ etworkList\Profiles\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
 reg query "HKLM\System\CurrentControlSet\Enum\USBSTOR"
 #Retreives suspicious value hidden within this registry key (the suspicious USB).
 
+gci registry::HKU
+#this command will allow you to see the contents of the provided registry, including HKU, without the issue of errors if you didn't include the 'registry' option. 
+
 
 Get-localuser -name $env:USERNAME | select-object sid
 Get-localuser -name $env:'Student' | select-object sid
@@ -53,8 +56,9 @@ dir /a
 dir z*
 #if a file path is too long to copy and paste, try using the dir command with a wildcard to capture the remainder of the filepath that cannot be pasted. 
 
-gci registry::HKU
-#this command will allow you to see the contents of the provided registry, including HKU, without the issue of errors if you didn't include the 'registry' option. 
+dir /a /s /R | findstr "DATA"
+#You can locate hidden ADS's using this. /a is all, /s is subdirectories, and the /R is specfically for files with an ADS. Findstr is the same as grep, and matches a string that has 'DATA' in it, which is commonly next to the ADS. 
+
 
 
 
