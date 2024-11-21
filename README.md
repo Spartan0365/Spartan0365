@@ -10,6 +10,13 @@ reg query HKU\S-1-5-21-2881336348-3190591231-4063445930-1003\Software\Microsoft\
 reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 #retreives suspcious value hidden within this registry key.
 
+reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\N
+etworkList\Profiles\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
+#Retrieves suspicious value hidden within this registry key (the suspiscious network).
+
+reg query "HKLM\System\CurrentControlSet\Enum\USBSTOR"
+#Retreives suspicious value hidden within this registry key (the suspicious USB).
+
 
 Get-localuser -name $env:USERNAME | select-object sid
 Get-localuser -name $env:'Student' | select-object sid
@@ -45,6 +52,11 @@ dir /a
 
 dir z*
 #if a file path is too long to copy and paste, try using the dir command with a wildcard to capture the remainder of the filepath that cannot be pasted. 
+
+gci registry::HKU
+#this command will allow you to see the contents of the provided registry, including HKU, without the issue of errors if you didn't include the 'registry' option. 
+
+
 
 
 
