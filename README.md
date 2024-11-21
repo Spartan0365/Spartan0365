@@ -25,3 +25,17 @@ get-childitem -force
 get-filehash -algorithm SHA512
 #Gives the sha512 hash of a file in windows powershell. 
 
+get-acl
+#powershell command that lists the permissions of a file
+
+C:\Windows\System32\drivers\etc\hosts
+#the file that maps hostnames to IP addresses in Windows
+
+icacls "C:\Windows\System32\drivers\etc\hosts"
+#lists the permissions of the specified file, (path provided to the file hosts). RX is read and execute, which is permitted by the group: Builtin\Users.
+
+certutil -hashfile "C:\Windows\System32\drivers\etc\hosts" MD5
+$provides the md5 hash of the provided file, which is an MD5 hash in this case, for the file 'hosts'.
+
+
+
